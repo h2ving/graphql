@@ -39,7 +39,7 @@ The objective of this project is to leverage GraphQL for querying user-specific 
 
 ## Usage
 
-Explain how to run the project locally and any additional steps required to set up and view the profile page.
+To use this project you need to install the liveserver extension for vscode and run the live server in cloned repository.
 
 ## Login
 
