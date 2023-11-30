@@ -1,0 +1,127 @@
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+header h1 {
+    margin-left: 47%;
+}
+
+#loginFormContainer {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#loginFormContainer h2 {
+    margin-bottom: 20px;
+}
+
+#loginFormContainer form div {
+    margin-bottom: 10px;
+}
+
+#loginFormContainer label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#loginFormContainer input[type="text"],
+#loginFormContainer input[type="password"] {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#loginFormContainer button {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#loginFormContainer button:hover {
+    background-color: #d14232;
+}
+
+#container {
+    display: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+#userdata {
+    flex: 1 1 300px;
+    margin: 0 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#userdata h1 {
+    margin-top: 0;
+}
+
+#userdata h2 {
+    margin-bottom: 10px;
+}
+
+#userdata ul {
+    list-style: none;
+    padding: 0;
+}
+
+#userdata ul li {
+    margin-bottom: 5px;
+}
+
+#auditsGraph,
+#xpOverTimeGraph {
+    display: flex;
+    flex: 1 1 300px;
+    margin: 0 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+}
+
+/* Styling for logout button */
+#logoutbutton {
+    display: none;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    height: fit-content;
+    align-self: center;
+    margin-left: auto;
+}
+
+#logoutbutton:hover {
+    background-color: #d14232;
+}

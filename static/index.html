@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphQL</title>
+    <script src="script.js" defer></script>
+    <link rel="icon" type="image/svg" href="GraphQL_Logo.svg">
+    <link rel="stylesheet" href="freshstyle.css">
+</head>
+
+<body>
+    <header>
+        <h1>GraphQL</h1>
+        <button type="button" id="logoutbutton">Logout</button>
+    </header>
+    <div id="loginFormContainer">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div>
+                <label for="username">Username or Email:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="button" id="submitbutton">Login</button>
+        </form>
+    </div>
+    <div id="container">
+        <div id="userdata">
+            <h1>User Profile</h1>
+            <div>
+                <h2>Basic Information</h2>
+                <ul>
+                    <li><strong>Name:</strong> <span id="userName"></span></li>
+                    <li><strong>Email:</strong> <span id="userEmail"></span></li>
+                    <!-- Add more fields for other basic information -->
+                </ul>
+            </div>
+
+            <div>
+                <h2>Additional Information</h2>
+                <ul>
+                    <li><strong>Address:</strong> <span id="userAddress"></span></li>
+                    <li><strong>Telephone:</strong> <span id="userTelephone"></span></li>
+                    <li><strong>Date of birth:</strong> <span id="userDOB"></span></li>
+                    <li><strong>Nationality:</strong> <span id="userNationality"></span></li>
+                    <!-- Add more fields for additional information -->
+                </ul>
+            </div>
+
+            <div>
+                <h2>Other Details</h2>
+                <ul>
+                    <li><strong>Total XP:</strong> <span id="userXP"></span></li>
+                    <!-- Add more fields for other details -->
+                </ul>
+            </div>
+        </div>
+
+        <div id="auditsGraph">
+
+        </div>
+
+        <div id="xpOverTimeGraph">
+            
+        </div>
+    </div>
+</body>
+
+</html>
