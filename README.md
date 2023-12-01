@@ -15,7 +15,7 @@ This project aims to create a personalized profile page using GraphQL to query u
 
 ## Auditing
 
-To audit the project head over to (<h2ving.github.io/graphql/static>) and log in with your 01.kood.tech credentials.
+To audit the project head over to <https://h2ving.github.io/graphql/static/> and log in with your 01.kood.tech credentials.
 
 ## Overview
 
@@ -43,7 +43,7 @@ The profile page includes two SVG-based statistical graphs displaying metrics li
 
 ## Hosting
 
-The profile page will be hosted on GitHub Pages at (<h2ving.github.io/graphql/static>)
+The profile page will be hosted on GitHub Pages at <https://h2ving.github.io/graphql/static/>
 
 ## Contributors
 
