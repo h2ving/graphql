@@ -1,17 +1,21 @@
-# Your Profile Page - GraphQL Learning Project
+# Your Profile Page - GraphQL
 
-This project aims to create a personalized profile page using GraphQL to query user-specific data from the platform's provided GraphQL endpoint. The profile includes various sections displaying user information fetched via GraphQL queries and visualizations of statistics using SVG-generated graphs.
+This project aims to create a personalized profile page using GraphQL to query user-specific data from the 01.kood.tech platform's provided GraphQL endpoint. The profile includes various sections displaying user information fetched via GraphQL queries and visualizations of statistics using SVG-generated graphs.
 
 ## Table of Contents
 
+- [Auditing](#auditing)
 - [Overview](#overview)
 - [Features](#features)
-- [Installation](#installation)
 - [Usage](#usage)
 - [Login](#login)
 - [Statistics Graphs](#statistics-graphs)
 - [Hosting](#hosting)
 - [Contributors](#contributors)
+
+## Auditing
+
+To audit the project head over to <h2ving.github.io/graphql/static> and log in with your 01.kood.tech credentials.
 
 ## Overview
 
@@ -23,23 +27,9 @@ The objective of this project is to leverage GraphQL for querying user-specific 
 - **Statistical Graphs**: SVG-generated graphs displaying different statistics, such as XP earned over time and audit ratio.
 - **Login and Authentication**: Sign in functionality using credentials (username:password or email:password), JWT authentication, and error handling for invalid credentials.
 
-## Installation
-
-1. Clone the repository:
-
-    ```bash
-    git clone https://github.com/h2ving/graphql.git
-    ```
-
-2. Install dependencies:
-
-    ```bash
-    npm install
-    ```
-
 ## Usage
 
-To use this project you need to install the liveserver extension for vscode and run the live server in cloned repository.
+To run this project locally you need to serve index.html file on a server. For example install the liveserver extension for vscode and run the live server in the cloned repository directory.
 
 ## Login
 
@@ -49,11 +39,11 @@ You'll need a JWT to access the GraphQL API. A JWT can be obtained from the sign
 
 ## Statistics Graphs
 
-The profile page includes at least two SVG-based statistical graphs displaying various metrics like XP earned over time, project PASS and FAIL ratio, audit ratio, etc. Users can interact with these graphs to visualize their progress and achievements.
+The profile page includes two SVG-based statistical graphs displaying metrics like XP earned over time and audit ratio. Users can interact with these graphs to visualize their progress and achievements.
 
 ## Hosting
 
-The profile page will be hosted on GitHub Pages
+The profile page will be hosted on GitHub Pages at <h2ving.github.io/graphql/static>
 
 ## Contributors
 

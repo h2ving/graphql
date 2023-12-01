@@ -68,19 +68,18 @@ const getDataFromGraphql = async (token) => {
     })
     if (results.ok) {
         const userData = await results.json();
-        console.log('User data: ', userData);
+        //console.log('User data: ', userData);
         // Process the retrieved data and populate the UI
         populateUserData(userData)
         auditRatioGraph(userData)
         progressOT(userData);
     } else {
         console.error('Failed to fetch user data');
-        // Handle error fetching user data
+        alert('Failed to fetch user data');
     }
 };
 
 function progressOT(userData) {
-    //const xpOverTimeGraph = document.getElementById('xpOverTimeGraph');
     const user = userData.data.user[0];
 
     const excludedPaths = ["/johvi/div-01/piscine-js/", "/johvi/piscine-go"];
@@ -93,57 +92,8 @@ function progressOT(userData) {
             cumulativeXP += transaction.amount;
             return { ...transaction, cumulativeXP };
         }));
-
-    //xpOverTimeGraph.innerHTML = progressSvg.trim();
 }
 
-/*
-function progressOverTime(data) {
-    const width = 600;
-    const height = 400;
-    // Convert dates to timestamps and find min and max for scaling
-    const timestamps = data.map(t => new Date(t.createdAt).getTime());
-    const minX = Math.min(...timestamps);
-    const maxX = Math.max(...timestamps);
-    const maxY = Math.max(...data.map(t => t.cumulativeXP));
-
-    // Scale functions
-    const scaleX = (time) => (time - minX) / (maxX - minX) * width;
-    const scaleY = (cumulativeXP) => height - (cumulativeXP / maxY) * height;
-
-    let svgContent = `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">`;
-
-    // Draw lines between points for cumulative XP and display information
-    for (let i = 0; i < data.length - 1; i++) {
-        svgContent += `
-            <line x1="${scaleX(timestamps[i])}" y1="${scaleY(data[i].cumulativeXP)}"
-                  x2="${scaleX(timestamps[i + 1])}" y2="${scaleY(data[i + 1].cumulativeXP)}"
-                  stroke="blue" stroke-width="2" />
-        `;
-
-        // Extract exercise name from path
-        const pathParts = data[i + 1].path.split('/');
-        const exerciseName = pathParts[pathParts.length - 1];
-
-        // Divide XP amount by 100 and round to one decimal place
-        const formattedXP = (data[i + 1].amount / 1000).toFixed();
-
-        // Add tooltip with information when hovering over data points
-        svgContent += `
-            <text x="${scaleX(timestamps[i + 1])}" y="${scaleY(data[i + 1].cumulativeXP) - 10}"
-                  text-anchor="middle" font-size="12" fill="black"
-                  style="pointer-events: all;"
-                  onmouseover="showTooltip(event, '${exerciseName}', '${data[i + 1].createdAt}', '${formattedXP}')"
-                  onmouseout="hideTooltip()">
-                ${new Date(data[i + 1].createdAt).toLocaleDateString()}
-            </text>
-        `;
-    }
-
-    svgContent += `</svg>`;
-    return svgContent;
-}
-*/
 const getUserTotalXP = (user) => {
     let totalXP = 0;
     const excludedPaths = ["/johvi/div-01/piscine-js/", "/johvi/piscine-go"];
@@ -293,43 +243,3 @@ logOutButton.addEventListener('click', () => {
     document.getElementById('container').style.display = 'none';
     logOutButton.style.display = 'none';
 });
-
-/*
-// Function to show tooltip
-function showTooltip(event, path, createdAt, amount) {
-    // Create a tooltip element
-    const tooltip = document.createElement('div');
-    tooltip.classList.add('tooltip');
-
-    // Set tooltip content
-    tooltip.innerHTML = `
-        <strong>Project:</strong> ${path}<br>
-        <strong>Date:</strong> ${new Date(createdAt).toLocaleString()}<br>
-        <strong>XP:</strong> ${amount}
-    `;
-
-    // Get the parent container of the SVG
-    const svgContainer = document.getElementById('xpOverTimeGraph');
-
-    // Calculate position relative to the parent container
-    const rect = svgContainer.getBoundingClientRect();
-    const posX = event.clientX - rect.left + 250;
-    const posY = event.clientY - rect.top + 500;
-
-    // Position the tooltip
-    tooltip.style.position = 'absolute';
-    tooltip.style.display = 'block';
-    tooltip.style.top = `${posY}px`; // Show tooltip at the calculated Y position
-    tooltip.style.left = `${posX}px`; // Show tooltip at the calculated X position
-
-    // Append tooltip to the body or SVG container
-    svgContainer.appendChild(tooltip);
-}
-
-// Function to hide tooltip
-function hideTooltip() {
-    // Remove all elements with the 'tooltip' class
-    const tooltips = document.querySelectorAll('.tooltip');
-    tooltips.forEach(tooltip => tooltip.remove());
-}
-*/

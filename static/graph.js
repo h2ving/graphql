@@ -88,9 +88,3 @@ function formatXP(xp) {
         return xp + ' XP';
     }
 }
-
-function hideTooltip() {
-    // Remove all elements with the 'tooltip' class
-    const tooltips = document.querySelectorAll('.tooltip');
-    tooltips.forEach(tooltip => tooltip.remove());
-}
